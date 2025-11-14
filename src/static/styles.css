@@ -1,3 +1,61 @@
+/* Modal de confirmação */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: #fff;
+  padding: 32px 28px 24px 28px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(26,35,126,0.18);
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: center;
+}
+.modal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  color: #222;
+}
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+#modal-cancel-btn, #modal-confirm-btn {
+  min-width: 90px;
+  padding: 8px 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#modal-cancel-btn {
+  background: #e3e6fd;
+  color: #1a237e;
+}
+#modal-cancel-btn:hover {
+  background: #c5cae9;
+}
+#modal-confirm-btn {
+  background: #c62828;
+  color: #fff;
+}
+#modal-confirm-btn:hover {
+  background: #b71c1c;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -165,8 +223,9 @@ footer {
   background-color: #c5cae9;
 }
 
+
 .participants-list {
-  list-style: disc inside;
+  list-style: none;
   margin: 0 0 0 10px;
   padding: 0 0 0 10px;
   color: #333;
@@ -177,9 +236,33 @@ footer {
   box-shadow: 0 1px 2px rgba(26,35,126,0.04);
 }
 
+
 .participants-list li {
   margin-bottom: 4px;
   padding: 2px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.participant-email {
+  flex: 1;
+  word-break: break-all;
+}
+
+.delete-participant-btn {
+  background: none;
+  border: none;
+  color: #c62828;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+.delete-participant-btn:hover {
+  background: #ffebee;
 }
 
 .participants-list .no-participants {
